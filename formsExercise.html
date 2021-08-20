@@ -8,6 +8,7 @@
     <title>Survey</title>
 </head>
 <body>
+    <form id="fieldset">
     <fieldset>
         <legend>Customer Service Survey</legend>
         <form>
@@ -22,17 +23,15 @@
 
         <fieldset>
             <legend>When you visited:</legend>
-            <form>
                 <label for="date">
                     Date Visited
-                    <input type="date">
+                    <input type="date" min="2021-01-01" max="2021-12-31">
                 </label>
                 <br>
                 <label for="time">
                     Time
                     <input type="time">
                 </label>
-            </form>
         </fieldset>
         
         <label for="name">
@@ -49,7 +48,7 @@
             <legend>Gender</legend>
             <input type="radio" id="male"> Male
             <br>
-            <input type="radio" id="female"> Female
+            <input type="radio" id="female" checked> Female
         </fieldset>
 
         <label for="experience">
@@ -61,14 +60,23 @@
         <br>
         <label for="timesVisited">
             Times visited last month:
-            <input type="text" id="timesVisited">
+            <input type="text" id="timesVisited" min="1" max="30">
         </label>
 
         <br>
         <input type="checkbox">
         Please check the box if you would be willing to be contacted about your experience
         <br>
-        <input type="button" value="Submit">
+        <label for="password">
+            Password:
+            <input type="password" id="password" pattern="[A-Za-z]{5,10}" title="Please enter a password that is 5 to 10 characters in length">            
+        </label>
+        <br>
+        
+        <button type="reset" form="fieldset">Reset</button>
+        <br>
+        <button>Submit</button>
     </fieldset>
+</form>
 </body>
 </html>
